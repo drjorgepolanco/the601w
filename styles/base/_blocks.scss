@@ -1,0 +1,149 @@
+/*\
+ *
+ * OffWhite Blocks Components
+ *
+\*/
+
+video, iframe {
+  height: 100%;
+  width: 100%;
+  display: block;
+  padding: 0;
+  background: black;
+}
+
+/* All Sections */
+.ow-sctn {
+  background: white;
+  position: relative;
+  z-index: 1;
+  
+  // h1, h2, h3, h4, h5, h6, p {
+  //   padding: 0;
+  //   padding-top: 12px;
+  //   margin: 0;
+  // }
+  // p {
+  //   padding: $ow-pad-x-md;
+  // }
+  // li {
+  //   padding: $ow-pad-x-sm;
+  //   margin: 0;
+  // }
+  .ow-bg {
+    @include clearfix;
+  }
+  .ow-sctn-ctnt {
+    @include clearfix;
+    height: 100%;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* isHeightVh */
+  &.vh {
+      
+    .pos {
+      position: absolute;
+      z-index: 1;
+    }
+
+    /* When position in all axis matters */
+    .left-top {
+      left: 0;
+      top: 0;
+      right: auto;
+      bottom: auto;
+    }
+    .left-center {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      left: 0;
+      right: auto;
+    }
+    .left-bottom {
+      left: 0;
+      bottom: 0;
+      right: auto;
+      top: auto;
+    }
+    .center-top {
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      top: 0;
+    }
+    .center-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+    .center-bottom {
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      bottom: 0;
+      top: auto;
+    }
+    .right-top {
+      right: 0;
+      top: 0;
+      left: auto;
+      bottom: auto;
+    }
+    .right-center {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      right: 0;
+      left: auto;
+    }
+    .right-bottom {
+      right: 0;
+      bottom: 0;
+      top: auto;
+      left: auto;
+    }
+
+    /* When only vertical position matters */
+    .top {
+      top: 0;
+    }
+    .center {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+    .bottom {
+      bottom: 0;
+    }
+
+    /* sctn Height */
+    @media only screen and (max-width: 1023px) {
+      height: calc(100vh - 60px);
+    }
+    @media only screen and (min-width: 1024px) {
+      &.qt-one   { height: calc( 25vh      - 80px); }
+      &.td-one   { height: calc( 33.3333vh - 80px); }
+      &.qt-two   { height: calc( 50vh      - 80px); }
+      &.td-two   { height: calc( 66.6666vh - 80px); }
+      &.qt-three { height: calc( 75vh      - 80px); }
+      &.qt-four  { height: calc(100vh      - 80px); }
+    }
+  }
+}

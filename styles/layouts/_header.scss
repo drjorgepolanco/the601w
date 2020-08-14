@@ -1,0 +1,394 @@
+// /* Header */
+
+.site-header {
+
+	.site-header-bottom {
+		height: 100%;
+	}
+	.wrap-logo {
+		width: 160px;
+	}
+	.wrap-nav {
+
+		h3 {
+			font-size: 16px;
+			font-family: $ttnorms-light;
+			margin: 0;
+			color: $ow-grey;
+		}
+	}
+}
+
+
+
+/* ========================================================================== */
+/* Layouts: Header */
+/* =============== */
+
+.site-header {
+  @include translate_xy(0, -$ow-header-height-mobile);
+  height: $ow-header-height-mobile;
+  top: 0; left: 0; right: 0;
+  width: 100%;
+  z-index: 9999;
+  opacity: 0;
+  transition: all $ow-transition;
+  z-index: 100;
+
+  &.active {
+      @include translate_xy(0, 0);
+      opacity: 1;
+  }
+  @include tablet_ls {
+      @include translate_xy(0, -$ow-header-height-desktop);
+      height: $ow-header-height-desktop;
+  }
+  .wrap-logo {
+      @include align_y;
+      left: 16px;
+      z-index: 3;
+  }
+  /* Header Background */
+  .header-bg {
+      position: absolute;
+      z-index: 2;
+      height: 100%;
+      width: 100%;
+  }
+}
+
+
+
+/* ========================================================================== */
+/* Navigation */
+/* ========== */
+
+.wrap-navigation {
+  width: 100%;
+  
+  ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+
+      li {
+          float: left;
+          width: 25%;
+
+          a {
+              @include fill_parent;
+              display: block;
+              color: #05A1DC;
+          }
+          .img {
+              display: block;
+              margin: 0 auto;
+              width: 100%;
+              max-width: 80px;
+          }
+          .text {
+              display: block;
+              text-align: center;
+              padding-top: 16px;
+          }
+          .icon,
+          .title {
+              display: inline-block;
+              font-size: 18px;
+          }
+      }
+  }
+}
+
+
+
+
+/* Actual nav */
+.wrap-nav {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 320px;
+  transition-property: transform;
+  transition-duration: $ow-transition;
+  z-index: 1;
+  padding: 0 32px;
+  padding-top: 60px;
+  text-align: left;
+
+  /* Call to Action */
+  .wrap-ctas {
+    height: 100px;
+
+    .pos {
+      @include align_xy;
+      width: 100%;
+    }
+  }
+  ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    padding: 8px 0;
+
+    a {
+      font-size: 20px;
+      transition: all $ow-transition;
+      color: white;
+    }
+  }
+  
+  /* The actual Navigation: Primary and Secondary */
+  .nav,
+  .social-media {
+    padding: 16px 0;
+  }
+  &.active {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* nav hides and comes from the right side */
+  &.right {
+    @include translate_x(100%);
+    right: 0;
+    left: auto;
+
+    &.active {
+      @include translate_x(0);
+    }
+  }
+    /* nav hides and comes from the right side */
+  &.left {
+    @include translate_x(-100%);
+    left: 0;
+    right: auto;
+
+    &.active {
+      @include translate_x(0);
+    }
+  }
+  &.top {
+    @include translate_y(-100%);
+    right: 0;
+    left: 0;
+    width: 100%;
+
+    &.active {
+      @include translate_y(0);
+    }
+  }
+  &.bottom {
+    @include translate_y(100%);
+    right: 0;
+    left: 0;
+    width: 100%;
+
+    &.active {
+      @include translate_y(0);
+    }
+  }
+
+  @include tablet_ls {
+
+    @include translate_xy(0, 0);
+    background: transparent !important;
+    padding: 0;
+    padding-top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0;
+    background-color: transparent;
+    z-index: 2;
+
+    &.left, &.top, &.right, &.bottom {
+      left: 0; right: 0; bottom: 0; top: 0;
+      transform: none;
+    }
+    
+    /* Call to Action */
+    .wrap-ctas {
+      width: auto;
+      height: 100%;
+
+      .pos {
+        @include reset_align;
+        @include align_y;
+        right: 16px;
+        width: auto;
+      }
+    }
+    .nav {
+      @include align_y;
+      right: 16px;
+    }
+    ul {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      padding: 0;
+      padding-top: 10px;
+
+      li {
+        display: inline-block;
+        width: auto;
+        height: 100%;
+        padding: 0 12px;
+        opacity: 1;
+        visibility: visible;
+        float: none;
+        margin: 0;
+  
+        a {
+          text-transform: initial;
+          position: relative;
+          background: transparent;
+          height: 100%;
+          display: table;
+          font-size: 22px;
+          color: #151515;
+  
+          span {
+            @include reset_align;
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}
+@include tablet_ls {
+
+  .wrap-nav {
+
+  }
+}
+
+@include tablet_ls {
+
+  .menu-toggle {
+    display: none;
+  }
+  .nav-header {
+    height: $ow-header-height-desktop;
+  }
+}
+
+
+
+/* Nav Trigger */
+/* ----------- */
+
+.nav-trigger {
+  @include align_y;
+  z-index: 3;
+  right: 16px;
+
+  @include tablet_ls {
+    display: none !important;
+  }
+}
+
+
+/* Nav Trigger: Icon */
+a.nav-trigger {
+  display: block;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  border-width: 2px;
+  border-style: solid;
+  transition: border-color $ow-transition;
+  
+  .text {
+    @include align_y;
+    text-transform: uppercase;
+    font-weight: 100;
+    position: absolute;
+    right: 42px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  .icon {
+    @include align_xy;
+    display: block;
+    bottom: auto;
+    right: auto;
+    width: 12px;
+    height: 2px;
+    transition: background-color $ow-transition;
+
+    .before,
+    .after {
+      content: '';
+      height: 2px;
+      width: 12px;
+      right: 0;
+      position: absolute;
+      transition: transform $ow-transition, top $ow-transition, background-color $ow-transition;
+    }
+    .before {
+      top: -5px;
+    }
+    .after {
+      top: 5px;
+    }
+  }
+  &.active {
+
+    .icon {
+      background-color: transparent !important;
+
+      .before {
+        @include rotate(135deg);
+        top: 0;
+      }
+      .after {
+        @include rotate(225deg);
+        top: 0;
+      }
+    }
+  }
+}
+
+
+.address {
+  padding: 16px 0;
+
+  h2, p {
+    color: white;
+  }
+  h2 {
+    font-family: "TTNorms-Bold";
+    font-size: 64px;
+    margin: 0;
+    padding-bottom: 0;
+  }
+  p {
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+
+.social-media {
+  li {
+    display: inline-block;
+    margin: 0 8px;
+    
+    a {
+      font-size: 32px;
+    }
+  }
+}

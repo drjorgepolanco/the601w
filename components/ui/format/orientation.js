@@ -1,0 +1,1 @@
+export const fmtOrientation = (attr) => (attr && attr.fmt_orientation) ? `orientation ${attr.fmt_orientation}` : '';

@@ -1,0 +1,1 @@
+export const fmtMargin = (attr) => (attr && attr.fmt_margin) ? { margin: attr.fmt_margin } : {};

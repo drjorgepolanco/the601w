@@ -1,0 +1,1 @@
+export const fmtColor = (attr) => (attr && attr.fmt_color) ? { color: attr.fmt_color } : {};

@@ -1,0 +1,1204 @@
+/* -------------------------------------------------------------------------- */
+/* RANDOM */
+/* ------ */
+
+
+@mixin basic_link {
+  @include fill_parent;
+  transition: 0.3s;
+}
+
+
+@mixin smooth_font {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+@mixin reset_ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@mixin reset_align {
+  left: auto;
+  right: auto;
+  position: relative;
+  top: auto;
+  bottom: auto;
+  position: relative;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+}
+@mixin reset_css {
+  animation: none;
+  animation-delay: 0;
+  animation-direction: normal;
+  animation-duration: 0;
+  animation-fill-mode: none;
+  animation-iteration-count: 1;
+  animation-name: none;
+  animation-play-state: running;
+  animation-timing-function: ease;
+  backface-visibility: visible;
+  background: 0;
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: transparent;
+  background-image: none;
+  background-origin: padding-box;
+  background-position: 0 0;
+  background-position-x: 0;
+  background-position-y: 0;
+  background-repeat: repeat;
+  background-size: auto auto;
+  border: 0;
+  border-style: none;
+  border-width: medium;
+  border-color: inherit;
+  border-bottom: 0;
+  border-bottom-color: inherit;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-style: none;
+  border-bottom-width: medium;
+  border-collapse: separate;
+  border-image: none;
+  border-left: 0;
+  border-left-color: inherit;
+  border-left-style: none;
+  border-left-width: medium;
+  border-radius: 0;
+  border-right: 0;
+  border-right-color: inherit;
+  border-right-style: none;
+  border-right-width: medium;
+  border-spacing: 0;
+  border-top: 0;
+  border-top-color: inherit;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-style: none;
+  border-top-width: medium;
+  bottom: auto;
+  box-shadow: none;
+  box-sizing: content-box;
+  caption-side: top;
+  clear: none;
+  clip: auto;
+  color: inherit;
+  columns: auto;
+  column-count: auto;
+  column-fill: balance;
+  column-gap: normal;
+  column-rule: medium none currentColor;
+  column-rule-color: currentColor;
+  column-rule-style: none;
+  column-rule-width: none;
+  column-span: 1;
+  column-width: auto;
+  content: normal;
+  counter-increment: none;
+  counter-reset: none;
+  cursor: auto;
+  direction: ltr;
+  display: inline;
+  empty-cells: show;
+  float: none;
+  font: normal;
+  font-family: inherit;
+  font-size: medium;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  height: auto;
+  hyphens: none;
+  left: auto;
+  letter-spacing: normal;
+  line-height: normal;
+  list-style: none;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: disc;
+  margin: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  max-height: none;
+  max-width: none;
+  min-height: 0;
+  min-width: 0;
+  opacity: 1;
+  orphans: 0;
+  outline: 0;
+  outline-color: invert;
+  outline-style: none;
+  outline-width: medium;
+  overflow: visible;
+  overflow-x: visible;
+  overflow-y: visible;
+  padding: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  page-break-after: auto;
+  page-break-before: auto;
+  page-break-inside: auto;
+  perspective: none;
+  perspective-origin: 50% 50%;
+  position: static;
+  /* May need to alter quotes for different locales (e.g fr) */
+  quotes: '\201C' '\201D' '\2018' '\2019';
+  right: auto;
+  tab-size: 8;
+  table-layout: auto;
+  text-align: inherit;
+  text-align-last: auto;
+  text-decoration: none;
+  text-decoration-color: inherit;
+  text-decoration-line: none;
+  text-decoration-style: solid;
+  text-indent: 0;
+  text-shadow: none;
+  text-transform: none;
+  top: auto;
+  transform: none;
+  transform-style: flat;
+  transition: none;
+  transition-delay: 0s;
+  transition-duration: 0s;
+  transition-property: none;
+  transition-timing-function: ease;
+  unicode-bidi: normal;
+  vertical-align: baseline;
+  visibility: visible;
+  white-space: normal;
+  widows: 0;
+  width: auto;
+  word-spacing: normal;
+  z-index: auto;
+  /* basic modern patch */
+  all: initial;
+  all: unset;
+}
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/* MEDIA QUERIES */
+/* ------------- */
+
+
+/* Media Query */
+@mixin media_query($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+
+/* Modern Phone: iPhone 6, 7 */
+@mixin phone_lg {
+  @media only screen and (min-width: 375px) {
+    @content;
+  }
+}
+
+
+/* Phablet: iPhone 6 Plus, large screen phones */
+@mixin phablet {
+  @media only screen and (min-width: 414px) {
+    @content;
+  }
+}
+
+
+/* Tablet Portrait */
+@mixin tablet_pt {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+
+/* Tablet Landscape */
+@mixin tablet_ls {
+  @media only screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+
+/* Laptop */
+@mixin laptop {
+  @media only screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+
+/* Laptop Wide */
+@mixin laptop_wide {
+  @media only screen and (min-width: 1366px) {
+    @content;
+  }
+}
+
+
+/* Desktop */
+@mixin desktop {
+  @media only screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
+
+/* Desktop Wide */
+@mixin desktop_wide {
+  @media only screen and (min-width: 1680px) {
+    @content;
+  }
+}
+
+
+/* HD */
+@mixin hd {
+  @media only screen and (min-width: 1920px) {
+    @content;
+  }
+}
+
+
+/* Retina */
+@mixin retina {
+  @media only screen and (min-width: 2560px) {
+    @content;
+  }
+}
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/* CONTAINER */
+/* --------- */
+
+
+@mixin no_space {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin fill_parent {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+@mixin max_width($w: 1280px) {
+  max-width: $w;
+  margin: 0 auto;
+}
+
+@mixin empty_content {
+  content: " ";
+  display: table;
+}
+
+@mixin appearance_type($type: none) { /* normal|icon|window|button|menu|field */
+  -webkit-appearance: $type;
+      -moz-appearance: $type;
+      -ms-appearance: $type;
+        -o-appearance: $type;
+          appearance: $type;    
+}
+
+@mixin clearfix {
+  clear: both;
+
+  &:before,
+  &:after {
+    @include empty_content;        
+  }
+  &:after {
+    clear: both;
+  } 
+}
+
+@mixin column_count($count) {
+  -webkit-column-count: $count;
+      -moz-column-count: $count;
+          column-count: $count;
+}
+
+@mixin column_gap($px) {
+  -webkit-column-gap: $px;
+      -moz-column-gap: $px;
+          column-gap: $px;
+}
+
+@mixin column_fill($val: auto) {
+  -webkit-column-fill: $val;
+      -moz-column-fill: $val;
+          column-fill: $val;
+}
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/* TRANSFORM */
+/* --------- */
+
+
+@mixin rotate($deg) {
+  -webkit-transform: rotate($deg);
+      -ms-transform: rotate($deg);
+          transform: rotate($deg);
+}
+
+
+@mixin scale($size) {
+  -webkit-transform: scale($size); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+      -ms-transform: scale($size); /* IE 9 */
+          transform: scale($size); /* IE 10, Fx 16+, Op 12.1+ */ 
+}
+
+
+@mixin translate_x($value) {
+  -webkit-transform: translateX($value);
+      -ms-transform: translateX($value);
+          transform: translateX($value);
+}
+@mixin translate_y($value) {
+  -webkit-transform: translateY($value);
+      -ms-transform: translateY($value);
+          transform: translateY($value);
+}
+@mixin translate_xy($x, $y) {
+  -webkit-transform: translate($x, $y);
+      -ms-transform: translate($x, $y);
+          transform: translate($x, $y);
+}
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/* MEDIA */
+/* ----- */
+
+
+@mixin bg_img_props($bg-size: cover, $bg-position: center, $bg-repeat: no-repeat) {
+  background-size: $bg-size;
+  background-position: $bg-position;
+  background-repeat: $bg-repeat;    
+}
+@mixin bg_img_container { /* Fills its parent container */
+  @include no_space;
+  @include fill_parent;
+  position: relative;
+}
+@mixin bg_img($bg-size: cover, $bg-position: center, $bg-repeat: no-repeat) {
+  @include bg_img_props($bg-size, $bg-position, $bg-repeat);
+  @include bg_img_container;
+}
+
+
+@mixin full_screen_video { 
+  @include translate_xy(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/* SPACING */
+/* ------- */
+
+
+@mixin padding_x($val) {
+  padding-right: $val;
+  padding-left: $val;
+}
+@mixin padding_y($val) {
+  padding-top: $val;
+  padding-bottom: $val;
+}
+
+
+@mixin margin_x($val) {
+  margin-right: $val;
+  margin-left: $val;
+}
+@mixin margin_y($val) {
+  margin-top: $val;
+  margin-bottom: $val;
+}
+
+
+@mixin sctn_spacing($phone: 32px 16px, $phablet: 48px 32px, $tablet_ls: 64px 48px, $hd: 96px 64px) {
+  padding: $phone;
+  
+  @include phablet {
+    padding: $phablet;
+  }
+  @include tablet_ls {
+    padding: $tablet_ls;
+  }
+  @include hd {
+    padding: $hd;
+  }
+}
+@mixin sctn_spacing_x($phone: 16px, $phablet: 32px, $tablet_ls: 48px, $hd: 64px) {
+  padding-left: $phone;
+  padding-right: $phone;
+  
+  @include phablet {
+    padding-left: $phablet;
+    padding-right: $phablet;
+  }
+  @include tablet_ls {
+    padding-left: $tablet_ls;
+    padding-right: $tablet_ls;
+  }
+  @include hd {
+    padding-left: $hd;
+    padding-right: $hd;
+  }
+}
+@mixin sctn_spacing_y($phone: 32px, $phablet: 48px, $tablet_ls: 64px, $hd: 96px) {
+  padding-top: $phone;
+  padding-bottom: $phone;
+  
+  @include phablet {
+    padding-top: $phablet;
+    padding-bottom: $phablet;
+  }
+  @include tablet_ls {
+    padding-top: $tablet_ls;
+    padding-bottom: $tablet_ls;
+  }
+  @include hd {
+    padding-top: $hd;
+    padding-bottom: $hd;
+  }
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/* POSITIONING */
+/* ----------- */
+
+
+@mixin align_y {
+  @include translate_y(-50%);
+  position: absolute;
+  top: 50%;
+}
+@mixin align_x {
+  @include translate_x(-50%);
+  position: absolute;
+  left: 50%;
+}
+@mixin align_xy {
+  @include translate_xy(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+
+
+@mixin float {
+  float: none !important;
+  clear: both !important;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    clear: none !important;
+  }
+}
+@mixin float_left {
+  @include float;
+
+  @media (min-width: 1024px) {
+    padding-right: 16px;
+    float: left !important;
+  }
+}
+@mixin float_right {
+  @include float;
+
+  @media (min-width: 1024px) {
+    padding-left: 16px;
+    float: right !important;
+  }
+}
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/* CTA */
+/* --- */
+
+
+@mixin cta($active, $passive: white, $br: 0, $pad: 10px 24px 8px) {
+  @include smooth_font;
+  background: $active;
+  border-color: $active;
+  color: $passive;
+  padding: $pad;
+  border-radius: $br;
+  border-style: solid;
+  border-width: 2px;
+  transition: all 0.3s;
+  display: inline-block;
+  text-align: center;
+  color: white;
+  white-space: nowrap;
+  font-size: 16px;
+  margin: 0;
+
+  .ow-text, 
+  span {
+    font-size: 16px;
+    transition: all 0.3s;
+  }
+  &:visited,
+  .ow-text, 
+  span {
+    color: $passive;
+  }
+  &:hover {
+    background: $passive;
+    color: $active;
+    border-color: $active;
+
+    .ow-text, 
+    span {
+      color: $active;
+    }
+  }
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/* TEXT ELEMENTS */
+/* ------------- */
+
+@mixin font_size($phone: 16px, $phablet: $phone, $tablet_pt: $phablet, $laptop: $tablet_pt, $desktop: $laptop, $hd: $desktop) {
+  font-size: $phone;
+
+  @include phablet {
+    font-size: $phablet;
+  }
+  @include tablet_pt {
+    font-size: $tablet_pt;
+  }
+  @include laptop {
+    font-size: $laptop;
+  }
+  @include desktop {
+    font-size: $desktop;
+  }
+  @include hd {
+    font-size: $hd;
+  }
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/* FORM */
+/* ---- */
+
+@mixin form_field($color: #151515, $bw: 2px, $height: 50px, $pad: 4px 16px, $br: 0) {
+  color: $color;
+  border-color: $color;
+  height: $height;
+  padding: $pad;
+  border-width: $bw;
+  border-radius: $br;
+  border-style: solid;
+  transition: all 0.3s;
+  width: 100%;
+  margin: 0;
+  outline: none;
+}
+
+
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/* CUSTOM MIXINS SPECIFIC FOR THIS PROJECT */
+/* --------------------------------------- */
+
+@mixin gradient($dark, $light) {
+  background-image: linear-gradient(134deg, $dark 1%, $light 60%);
+}
+@mixin gradient_blue() {
+  @include gradient(#142237, #223655)
+}
+@mixin bg_blue($height: auto) {
+  @include gradient_blue();
+  height: $height;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+
+
+
+
+
+
+
+
+
+// =============================================================================
+
+/* -------------------------------------------------------------------------- */
+/* MIXINS */
+
+@mixin input {
+  border-style: solid;
+  border-width: 2px;
+  border-color: $color-primary;
+  border-radius: 0;
+  transition: all 0.3s;
+}
+
+
+
+/* CTA */
+/* --- */
+
+@mixin cta {
+  @include input;
+  @include smooth_font;
+  display: inline-block;
+  text-align: center;
+  color: white;
+  font-family: $font-cta;
+  white-space: nowrap;
+  font-size: 16px;
+  margin: 0;
+  text-transform: uppercase;
+  padding: 10px 24px 8px;
+  border-radius: $ow-brdr-rad;
+  
+  .ow-text, 
+  span {
+      font-size: 16px;
+      transition: all 0.3s;
+  }
+}
+@mixin cta_primary {
+  @include cta;
+  background: $color-primary;
+  color: white;
+  
+  &:visited,
+  .ow-text, 
+  span {
+      color: white;
+  }
+  &:hover {
+      background: white;
+      color: $color-primary;
+      border-color: $color-primary;
+
+      .ow-text, 
+      span {
+          color: $color-primary;
+      }
+  }
+}
+@mixin cta_primary_brdr {
+  @include cta;
+  background: transparent;
+  color: $color-primary;
+  
+  &:visited,
+  .ow-text, 
+  span {
+      color: $color-primary;
+  }
+  &:hover {
+      background: $color-primary;
+      color: white;
+      border-color: $color-primary;
+
+      .ow-text, 
+      span {
+          color: white;
+      }
+  }
+}
+@mixin cta_default {
+  @include cta;
+  background: $color-default;
+  color: white;
+  border-color: $color-default;
+  
+  &:visited,
+  .ow-text, 
+  span {
+      color: white;
+  }
+  &:hover {
+      background: white;
+      color: $color-default;
+      border-color: $color-default;
+
+      .ow-text, 
+      span {
+          color: $color-default;
+      }
+  }
+}
+@mixin cta_copy {
+  @include cta;
+  background: $color-copy;
+  color: white;
+  border-color: $color-copy;
+  
+  &:visited,
+  .ow-text, 
+  span {
+      color: white;
+  }
+  &:hover {
+      background: white;
+      color: $color-copy;
+      border-color: $color-copy;
+
+      .ow-text, 
+      span {
+          color: $color-copy;
+      }
+  }
+}
+@mixin cta_white {
+  @include cta;
+  border-color: white;
+  background: white;
+  color: $color-copy;
+  
+  &:visited,
+  .ow-text, 
+  span {
+      color: $color-copy;
+  }
+  &:hover {
+      background: transparent;
+      color: white;
+      border-color: white;
+
+      .ow-text, 
+      span {
+          color: white;
+      }
+  }
+}
+@mixin cta_white_brdr {
+  @include cta;
+  border-color: white;
+  background: transparent;
+  color: white;
+  
+  &:visited,
+  .ow-text, 
+  span {
+      color: white;
+  }
+  &:hover {
+      background: white;
+      color: $color-copy;
+      border-color: white;
+
+      .ow-text, 
+      span {
+          color: $color-copy;
+      }
+  }
+}
+@mixin cta_alert {
+  @include cta;
+  background: $color-alert;
+  color: white;
+  border-color: $color-alert;
+
+  &:visited,
+  .ow-text, 
+  span {
+      color: white;
+  }
+  &:hover {
+      background: white;
+      color: $color-alert;
+      border-color: $color-alert;
+
+      .ow-text, 
+      span {
+          color: $color-alert;
+      }
+  }
+}
+@mixin cta_success {
+  @include cta;
+  background: $color-success;
+  color: white;
+  border-color: $color-success;
+  
+  &:visited,
+  .ow-text, 
+  span {
+      color: white;
+  }
+  &:hover {
+      background: white;
+      color: $color-success;
+      border-color: $color-success;
+
+      .ow-text, 
+      span {
+          color: $color-success;
+      }
+  }
+}
+@mixin cta_custom($active, $passive: white) {
+  @include cta;
+  background: $active;
+  color: $passive;
+  border-color: $active;
+  
+  &:visited,
+  .ow-text, 
+  span {
+      color: $passive;
+  }
+  &:hover {
+      background: $passive;
+      color: $active;
+      border-color: $active;
+
+      .ow-text, 
+      span {
+          color: $active;
+      }
+  }
+}
+
+
+@mixin form_field() {
+  @include input;
+  width: 100%;
+  padding: 4px 16px;
+  font-family: $font-forms;
+  margin: 0;
+  outline: none;
+  color: $color-primary;
+  font-size: 16px;
+  height: 50px;
+  background: white;
+}
+
+@mixin text_line_through($w: 80%, $border: 1px solid) {
+  width: $w;
+  margin: 4px auto;
+  overflow: hidden;
+  text-align: center;
+
+  &:before, &:after {
+      content: "";
+      display: inline-block;
+      width: 50%;
+      margin: 0 .5em 0 -55%;
+      vertical-align: middle;
+      border-bottom: $border;                
+  }
+  &:after {
+      margin: 0 -55% 0 .5em;
+  }
+}
+@mixin sctn_title($size: 32px) {
+  font-family: $font-sans-medium;
+  font-weight: 900;
+  font-size: $size;
+  color: $color-primary;
+  width: 100%;
+}
+
+@mixin sctn_spacing {
+  padding: 32px 16px;
+  
+  @include phablet {
+      padding: 48px 32px;
+  }
+  @include tablet_ls {
+      padding: 64px 48px;
+  }
+}
+@mixin sctn_spacing_x {
+  padding-left: 16px;
+  padding-right: 16px;
+  
+  @include phablet {
+      padding-left: 32px;
+      padding-right: 32px;
+  }
+  @include tablet_ls {
+      padding-left: 48px;
+      padding-right: 48px;
+  }
+}
+@mixin sctn_spacing_y {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  
+  @include phablet {
+      padding-top: 48px;
+      padding-bottom: 48px;
+  }
+  @include tablet_ls {
+      padding-top: 64px;
+      padding-bottom: 64px;
+  }
+}
+
+@mixin align_y_img_sctn_double {
+  height: 100%;
+  position: absolute;
+
+  .ow-ctnt-set.ow-ctnt-pos {
+      @include align_y;
+      width: 100%;
+  }
+}
+
+@mixin product_title_in_loop {
+  @include sctn_title(18px);   
+  padding: 16px 0 4px;
+  color: $dr-gray-dark;
+  text-align: left;
+
+  @include phablet {
+      font-size: 20px;
+  }
+}
+@mixin inline_form {
+  @include clearfix;
+  
+  label {
+      text-align: left;
+      display: block;
+      padding-bottom: 4px;
+  }
+  button[type=submit] {
+      @include cta_primary;
+      margin-top: 8px;
+      float: left;
+  }
+  @include tablet_pt {
+
+      input[type=text] {
+          width: calc(100% - 216px);
+          float: left;
+          margin-right: 8px;
+      } 
+      button[type=submit] {
+          float: right;
+          margin: 0;
+          width: 200px;
+          margin-left: 8px;
+      }
+  }
+}
+
+
+
+
+
+
+/* Typography Mixins: update according to project specific values */
+
+@mixin font_size_h1 {
+  font-size: 64px;
+
+  // @include phablet {
+  //   font-size: 44px;
+  // }
+  // @include tablet_pt {
+  //   font-size: 48px;
+  // }
+  @include tablet_ls {
+    font-size: 72px;
+  }
+  @include laptop {
+    font-size: 84px;
+  }
+  // @include desktop {
+  //   font-size: 64px;
+  // }
+  // @include hd {
+  //   font-size: 72px;
+  // }
+}
+@mixin font_size_h2 {
+  font-size: 56px;
+
+  // @include phablet {
+  //     font-size: 36px;
+  // }
+  // @include tablet_pt {
+  //   font-size: 72px;
+  // }
+  @include tablet_ls {
+    font-size: 64px;
+  }
+  @include laptop {
+      font-size: 80px;
+  }
+  // @include desktop {
+  //     font-size: 84px;
+  // }
+  // @include hd {
+  //     font-size: 88px;
+  // }
+}
+@mixin font_size_h3 {
+  font-size: 48px;
+
+  // @include phablet {
+  //     font-size: 48px;
+  // }
+  @include tablet_pt {
+    font-size: 56px;
+  }
+  // @include tablet_ls {
+  //     font-size: 60px;
+  // }
+  // @include laptop {
+  //     font-size: 52px;
+  // }
+  // @include desktop {
+  //     font-size: 56px;
+  // }
+  // @include hd {
+  //     font-size: 60px;
+  // }
+}
+@mixin font_size_h4 {
+  font-size: 36px;
+
+  // @include phablet {
+  //     font-size: 36px;
+  // }
+  // @include tablet_pt {
+  //   font-size: 32px;
+  // }
+  // // @include tablet_ls {
+  // //     font-size: 28px;
+  // // }
+  // @include laptop {
+  //     font-size: 36px;
+  // }
+  // @include desktop {
+  //     font-size: 40px;
+  // }
+}
+@mixin font_size_h5 {
+  font-size: 24px;
+
+  // @include phablet {
+  //     font-size: 22px;
+  // }
+  @include tablet_pt {
+      font-size: 32px;
+  }
+  // @include tablet_ls {
+  //     font-size: 26px;
+  // }
+  // @include laptop {
+  //     font-size: 28px;
+  // }
+  // @include desktop {
+  //     font-size: 30px;
+  // }
+}
+@mixin font_size_h6 {
+  font-size: 20px;
+
+  // @include phablet {
+  //     font-size: 14px;
+  // }
+  @include tablet_pt {
+      font-size: 28px;
+  }
+  // @include tablet_ls {
+  //     font-size: 22px;
+  // }
+}
+
+/* p */
+
+@mixin font_size_p_lg {
+  font-size: 24px;
+
+  // @include phablet {
+  //   font-size: 22px;
+  // }
+  @include tablet_pt {
+    font-size: 26px;
+  }
+  @include hd {
+    font-size: 28px;
+  }
+}
+@mixin font_size_p_md {
+  font-size: 20px;
+
+  // @include phablet {
+  //   font-size: 20px;
+  // }
+  @include tablet_pt {
+    font-size: 22px;
+  }
+  @include hd {
+    font-size: 24px;
+  }
+}
+@mixin font_size_p_sm {
+  font-size: 18px;
+
+  // @include phablet {
+  //   font-size: 18px;
+  // }
+  @include tablet_pt {
+    font-size: 20px;
+  }
+  @include hd {
+    font-size: 22px;
+  }
+}

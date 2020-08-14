@@ -1,0 +1,1 @@
+export const TextHtml = ({ attr, style = {} }) => (attr.text_html) && <div className="ow-text ow-html" style={{ ...style }} dangerouslySetInnerHTML={{ __html: attr.text_html }} />;

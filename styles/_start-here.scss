@@ -1,0 +1,501 @@
+@import 'base/mixins';
+@import 'base/variables';
+
+/* SECTION HEIGHT FOR STATIC SECTIONS */
+/* ================================== */
+
+/* USE THE FOLLOWING WHEN SECTION FILLS THE SCREEN RESPECTING THE HEADER */
+/* --------------------------------------------------------------------- */
+/* SUBSTRACT THE HEIGHT OF THE HEADER ACCORDING TO YOUR PREFERENCES */
+
+$ow-header-mobile: 80px;
+$ow-header-desktop: 100px;
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  overflow-x: hidden;
+  color: $w-portfolio;
+}
+/* Default: */
+
+// .ow-sctn {
+
+//   &.vh { /* Section Height */
+
+//     @media only screen and (max-width: 1023px) {
+//       height: auto !important;
+//     }
+//     @include tablet_ls {
+
+//       &.qt-one   { height: calc(25vh      - #{$ow-header-desktop}) !important; }
+//       &.td-one   { height: calc(33.3333vh - #{$ow-header-desktop}) !important; }
+//       &.qt-two   { height: calc(50vh      - #{$ow-header-desktop}) !important; }
+//       &.td-two   { height: calc(66.6666vh - #{$ow-header-desktop}) !important; }
+//       &.qt-three { height: calc(75vh      - #{$ow-header-desktop}) !important; }
+//       &.qt-four  { height: calc(100vh     - #{$ow-header-desktop}) !important; }
+//     }
+//   }
+// }
+
+
+
+/* USE THE FOLLOWING WHEN SECTION FILLS THE SCREEN WITHOUT RESPECTING THE HEADER */
+/* ----------------------------------------------------------------------------- */
+
+// .ow-sctn {
+
+//     &.vh { /* Section Height */
+//         position: relative !important;
+
+//         @media only screen and (max-width: 1023px) {
+//             height: calc(100vh) !important;
+//         }
+//         @include tablet_ls {
+
+//             &.qt-one   { height: 25vh      !important; }
+//             &.td-one   { height: 33.3333vh !important; }
+//             &.qt-two   { height: 50vh      !important; }
+//             &.td-two   { height: 66.6666vh !important; }
+//             &.qt-three { height: 75vh      !important; }
+//             &.qt-four  { height: 100vh     !important; }
+//         }
+//     }
+// }
+
+
+/* ========================================================================== */
+/* ========================================================================== */
+
+
+#wpadminbar {
+  display: none;
+}
+
+body, .site-content {
+  overflow-x: hidden;
+}
+
+
+/* Layouts */
+.layout-class {
+  @include clearfix;
+}
+.layout-float {
+  @include clearfix;
+}
+.layout-flex {
+  @include clearfix;
+  // display: box;
+  display: flexbox !important;
+  display: flex !important;
+}
+.layout-grid {
+  @include clearfix;
+  display: '-ms-grid' !important;
+  display: grid !important;
+
+  .ow-ctnr-item {
+    @include bg_img;
+  }
+  @media only screen and (max-width: 767px) {
+
+    .ow-ctnr-item {
+      -ms-grid-column-span: 12 !important;
+      grid-column: span 12 !important;
+      -ms-grid-row-span: 3 !important;
+      grid-row: span 3 !important;
+    }
+  }
+}
+
+
+
+/* Helper Classes */
+
+/* Used in Nightfood Monsters section to center the last 2 elements on a list/gallery */
+.center-last-two {
+
+  @include tablet_pt {
+
+    .ow-image:nth-last-child(2) {
+      transform: translateX(50%);
+    }
+    .ow-image:last-child {
+      transform: translateX(75%);
+    }
+  }
+}
+
+
+/* Background Image */
+
+.bg-contain .ow-bg-image {
+  background-size: contain !important;
+}
+.bg-cover .ow-bg-image {
+  background-size: cover !important;
+}
+.bg-pos-top .ow-bg-image {
+  background-position: center top !important;
+}
+.bg-pos-bottom .ow-bg-image {
+  background-position: center bottom !important;
+}
+
+
+/* Padding */
+
+@mixin padding($phone: 32px 16px, $phablet: 48px 32px, $tablet_ls: 64px 48px, $hd: 96px 64px) {
+  padding: $phone;
+  
+  @include phablet {
+    padding: $phablet;
+  }
+  @include tablet_ls {
+    padding: $tablet_ls;
+  }
+  @include hd {
+    padding: $hd;
+  }
+}
+.pad-sm {
+  @include padding(16px 8px, 24px 16px, 32px 24px, 48px 32px);
+}
+.pad-md {
+  @include padding;
+}
+.pad-lg {
+  @include padding($phone: 48px 24px, $phablet: 72px 48px, $tablet_ls: 96px 72px, $hd: 144px 96px);
+}
+.pad-none {
+  padding: none !important;
+}
+
+/* Padding 0 */
+// .pad-0-x .ow-ctnt {
+//   padding-left: 0 !important;
+//   padding-right: 0 !important;
+// }
+// .pad-0-y .ow-ctnt {
+//   padding-top: 0 !important;
+//   padding-bottom: 0 !important;
+
+//   @media only screen and (max-width: 1023px) {
+//     padding: 0 !important;
+//   }
+// }
+.pad-0-top.ow-ctnr,
+.pad-0-top .ow-ctnt,
+.pad-0-top .ow-sctn-ctnt {
+  padding-top: 0 !important;
+}
+.pad-0-bottom.ow-ctnr,
+.pad-0-bottom .ow-ctnt,
+.pad-0-bottom .ow-sctn-ctnt {
+  padding-bottom: 0 !important;
+}
+.pad-0-left .ow-ctnt,
+.pad-0-left .ow-sctn-ctnt {
+  padding-left: 0 !important;
+}
+.pad-0-right .ow-ctnt,
+.pad-0-right .ow-sctn-ctnt {
+  padding-right: 0 !important;
+}
+
+
+/* Desktop Only */
+@include tablet_ls {
+  .pad-0-top-desktop .ow-ctnt,
+  .pad-0-top-desktop .ow-sctn-ctnt {
+    padding-top: 0 !important;
+  }
+  .pad-0-bottom-desktop .ow-ctnt,
+  .pad-0-bottom-desktop .ow-sctn-ctnt {
+    padding-bottom: 0 !important;
+  }
+  .pad-0-left-desktop .ow-ctnt,
+  .pad-0-left-desktop .ow-sctn-ctnt {
+    padding-left: 0 !important;
+  }
+  .pad-0-right-desktop .ow-ctnt,
+  .pad-0-right-desktop .ow-sctn-ctnt {
+    padding-right: 0 !important;
+  }
+}
+
+
+/* Mobile Only */
+@media only screen and (max-width: 1023px) {
+  
+  .pad-0-top-mobile .ow-ctnt,
+  .pad-0-top-mobile.ow-ctnr,
+  .pad-0-top-mobile .ow-sctn-ctnt {
+    padding-top: 0 !important;
+  }
+  .pad-0-bottom-mobile .ow-ctnt,
+  .pad-0-bottom-mobile.ow-ctnr,
+  .pad-0-bottom-mobile .ow-sctn-ctnt {
+    padding-bottom: 0 !important;
+  }
+  .pad-0-left-mobile .ow-ctnt,
+  .pad-0-left-mobile .ow-sctn-ctnt {
+    padding-left: 0 !important;
+  }
+  .pad-0-right-mobile .ow-ctnt,
+  .pad-0-right-mobile .ow-sctn-ctnt {
+    padding-right: 0 !important;
+  }
+}
+
+
+
+/* Padding sm: 16px */
+.pad-sm-x .ow-ctnt {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+.pad-sm-y .ow-ctnt {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+
+  @media only screen and (max-width: 1023px) {
+    padding: 16px !important;
+  }
+}
+.pad-sm-top .ow-ctnt {
+  padding-top: 16px !important;
+}
+.pad-sm-bottom .ow-ctnt {
+  padding-bottom: 16px !important;
+}
+.pad-sm-left .ow-ctnt {
+  padding-left: 16px !important;
+}
+.pad-sm-right .ow-ctnt {
+  padding-right: 16px !important;
+}
+
+/* Padding md: 32px */
+.pad-md-x .ow-ctnt {
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+}
+.pad-md-y .ow-ctnt {
+  padding-top: 32px !important;
+  padding-bottom: 32px !important;
+
+  @media only screen and (max-width: 1023px) {
+    padding: 32px !important;
+  }
+}
+.pad-md-top .ow-ctnt {
+  padding-top: 32px !important;
+}
+.pad-md-bottom .ow-ctnt {
+  padding-bottom: 32px !important;
+}
+.pad-md-left .ow-ctnt {
+  padding-left: 32px !important;
+}
+.pad-md-right .ow-ctnt {
+  padding-right: 32px !important;
+}
+
+/* Padding lg: 64px */
+.pad-lg-x .ow-ctnt {
+  padding-left: 64px !important;
+  padding-right: 64px !important;
+}
+.pad-lg-y .ow-ctnt {
+  padding-top: 64px !important;
+  padding-bottom: 64px !important;
+
+  @media only screen and (max-width: 1023px) {
+    padding: 64px !important;
+  }
+}
+.pad-lg-top .ow-ctnt {
+  padding-top: 64px !important;
+}
+.pad-lg-bottom .ow-ctnt {
+  padding-bottom: 64px !important;
+}
+.pad-lg-left .ow-ctnt {
+  padding-left: 64px !important;
+}
+.pad-lg-right .ow-ctnt {
+  padding-right: 64px !important;
+}
+
+
+
+
+
+
+
+/* Margin */
+
+.margin-x-0 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.margin-y-0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+
+
+
+
+
+
+.ow-ctnr {
+  overflow: hidden;
+  @include clearfix;
+  display: block;
+  position: relative;
+  height: 100%;
+}
+@media (max-width: 1023px) {
+  .ow-ctnr.float {
+    width: 100% !important;
+    float: none;
+    clear: both;
+  }
+}
+
+
+/* DO NOT DELETE UNTIL MAKING SURE REMOVING IT IS NOT BREAKING OTHER STUFF!!! */
+
+// .float.left,
+// .float.right,
+// .cols {
+//   clear: none;
+// }
+.float.left {
+  float: left;
+}
+.float.right {
+  float: right;
+}
+.float.none {
+  clear: both;
+  margin: 0 auto;
+}
+
+.cols {
+  clear: none;
+}
+
+.float {
+  clear: both;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  
+  .float {
+    clear: none;
+    width: 50%;
+  }
+  .float.left {
+    float: left;
+  }
+  .float.right {
+    float: right;
+  }
+}
+
+
+.pos {
+  position: absolute;
+  z-index: 1;
+}
+
+/* When position in all axis matters */
+.pos.left-top {
+  left: 0;
+  top: 0;
+  right: auto;
+  bottom: auto;
+}
+.pos.left-center {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 0;
+  right: auto;
+}
+.pos.left-bottom {
+  left: 0;
+  bottom: 0;
+  right: auto;
+  top: auto;
+}
+.pos.center-top {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: 0;
+}
+.pos.center-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.pos.center-bottom {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  bottom: 0;
+  top: auto;
+}
+.pos.right-top {
+  right: 0;
+  top: 0;
+  left: auto;
+  bottom: auto;
+}
+.pos.right-center {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 0;
+  left: auto;
+}
+.pos.right-bottom {
+  right: 0;
+  bottom: 0;
+  top: auto;
+  left: auto;
+}
+
+/* When only vertical position matters */
+.pos.top {
+  top: 0;
+}
+.pos.center {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.pos.bottom {
+  bottom: 0;
+}

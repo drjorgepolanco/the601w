@@ -1,0 +1,1 @@
+export { AnimatedTitle }   from './animated-title';

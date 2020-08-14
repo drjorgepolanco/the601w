@@ -1,0 +1,152 @@
+/* Fonts */
+/* ----- */
+
+/* Fonts */
+$filo-all:    'FilosofiaAllSmallCapsOT';
+$filo-ot:     'FilosofiaOT';
+$filo-sm:     'FilosofiaSmallCapsOT';
+
+$frank-bkcm:  'FranklinGothicLTPro-BkCm';
+$frank-dmcm:  'FranklinGothicLTPro-DmCm';
+$frank-dmxcm: 'FranklinGothicLTPro-DmXCm';
+
+
+/* Font Variables */
+$h1:      $frank-dmxcm;
+$h2:      $frank-dmxcm;
+$h3:      $filo-all;
+$h4:      $frank-dmcm;
+$h5:      $filo-ot;
+$h6:      $frank-bkcm;
+$p_sans:  $filo-ot;
+$p_serif: $filo-ot;
+
+
+/* Customize your font variables: */
+$font-cta:   $frank-dmxcm;
+$font-forms: $frank-bkcm;
+
+$font-layouts: $filo-ot;
+$font-header:  $filo-ot;
+$font-footer:  $filo-ot;
+
+$font-sans-bold:    $frank-dmcm;
+$font-sans-medium:  $frank-dmxcm;
+$font-sans-light:   $frank-bkcm;
+
+$font-serif-bold:    $filo-all;
+$font-serif-medium:  $filo-sm;
+$font-serif-light:   $filo-ot;
+
+// $font-extra-bold:   $museo700;
+// $font-extra-medium: $museo700;
+// $font-extra-light:  $museo500;
+
+
+
+/* ========================================================================== */
+/* Variables: Colors */
+/* ================= */
+
+
+$ow-black: #151515;
+$ow-black-light: #191919;
+$ow-black-lightr: #6b6969;
+
+$ow-red: #bc2132;
+$ow-yellow: #faaf40;
+$ow-green: #99cc00;
+
+
+/* Defaults Greys */
+$ow-grey: #666;
+$ow-grey-dark: #333;
+$ow-grey-light: #999;
+$ow-grey-soft: #e7e7e7; /* good for borders and separators */
+$ow-bg: #f8f8f8; /* good for item bg over white bg */
+
+
+/* Grays */
+$ow-gray-light: #e1dfde;
+$color-copy: #515151;
+$ow-gray-bg: #ebebeb;
+$ow-gray-brdr: #dadada;
+$ow-gray-brdr: #e1e1e1;
+$ow-gray-cart: #fbf9fa;
+
+
+/* Links */
+$ow-link-dark: #484848;
+$ow-link-blue: #53a4f1;
+$ow-link-grey: #2d2d2d;
+
+
+/* Youtube Colors */
+$youtube-grey: #303030;
+$youtube-red: #CD282B;
+
+
+/* Project Specific */
+$w-creativity: #e3691f;
+$w-experience: #40a38a;
+$w-decisiveness: #c25752;
+$w-sophistication: #008cbd;
+$w-perseverance: #7d93ae;
+$w-vision: #e7a223;
+$w-portfolio: #223655;
+$w-highlights: #7d94af;
+
+
+
+/* Colors */
+$color-primary: $ow-green;
+$color-alert: $ow-red;
+$color-warning: $ow-yellow;
+$color-success: $ow-green;
+$color-copy: $ow-black;
+$color-default: $ow-gray-light;
+
+
+
+
+
+/* ========================================================================== */
+/* Variables: Random */
+/* ================= */
+
+$ow-transition: 0.3s;
+$ow-shadow-box:  0px 4px 10px rgba(51, 51, 51, 0.2);
+$ow-shadow-text: 0px 4px 10px rgba(51, 51, 51, 0.6);
+$ow-shadow-product: 0 1px 4px 0 rgba(0, 0, 0, 0.06);
+$ow-shadow-product-hover: 0 2px 9px rgba(0, 0, 0, 0.12);
+
+$ow-pad-x-xl: 24px 0;
+$ow-pad-x-lg: 16px 0;
+$ow-pad-x-md: 12px 0;
+$ow-pad-x-sm: 6px 0;
+
+$ow-pad-xl: 24px;
+$ow-pad-lg: 16px;
+$ow-pad-md: 12px;
+$ow-pad-sm: 6px;
+
+
+
+
+
+
+/* ========================================================================== */
+/* Variables: Structure */
+/* ==================== */
+
+$ow-header-height-mobile: 60px;
+$ow-header-height-desktop: 80px;
+
+
+$ow-brdr-rad: 24px;
+$ow-height-header: 60px;
+$ow-height-preheader: 40px;
+$ow-height-siteheader: 80px;
+
+
+$ow-field-height: 48px;

@@ -1,0 +1,1 @@
+export const fmtGridGap = (attr) => (attr && attr.fmt_grid_gap) ? { gridGap: attr.fmt_grid_gap } : {};

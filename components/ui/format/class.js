@@ -1,0 +1,2 @@
+export const fmtClass       = (attr) => (attr && attr.fmt_class)        ? `${attr.fmt_class}`             : '';
+export const fmtClassLayout = (attr) => (attr && attr.fmt_class_layout) ? `${attr.fmt_class_layout} cols` : '';

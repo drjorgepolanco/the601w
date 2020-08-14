@@ -1,0 +1,1 @@
+export const embedOpts = (name, value) => (value) ? `&${name}=1` : `&${name}=0`;

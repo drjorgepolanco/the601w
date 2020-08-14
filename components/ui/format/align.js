@@ -1,0 +1,1 @@
+export const fmtAlign = (attr) => (attr && attr.fmt_align) ? { textAlign: attr.fmt_align } : {};

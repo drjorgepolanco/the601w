@@ -1,0 +1,1 @@
+export const TextBody = ({ attr, style = {}, className = '' }) => (attr.text_body) && <div className={ `ow-text ow-body ${className}` } style={ style } dangerouslySetInnerHTML={{ __html: attr.text_body }} />;

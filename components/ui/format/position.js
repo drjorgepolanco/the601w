@@ -1,0 +1,1 @@
+export const fmtPosition = (attr) => (attr && attr.fmt_position_type === 'absolute') ? ` pos ${attr.fmt_position_absolute}` : '';

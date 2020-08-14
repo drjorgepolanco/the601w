@@ -1,0 +1,725 @@
+@import '../styles/base/variables';
+@import '../styles/base/mixins';
+
+
+.wrap_app {
+
+  // p {
+  //   font-family: $filo-ot;
+  // }
+  // h1 {
+  //   font-family: $h1;
+  // }
+  // h2 {
+  //   font-family: $h2;
+  // }
+  // h3 {
+  //   font-family: $h3;
+  // }
+  // h4 {
+  //   font-family: $h4;
+  // }
+  // h5 {
+  //   font-family: $h5;
+  // }
+  // h6 {
+  //   font-family: $h6;
+  // }
+  p {
+    line-height: 1.23;
+  }
+}
+.padding {
+  @include sctn_spacing;
+}
+.resetUl {
+  @include reset_ul;
+}
+/* Font Mixins */
+@mixin text_normal {
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+@mixin title_thin {
+  @include text_normal;
+  font-family: $frank-dmxcm;
+  text-transform: uppercase;
+}
+@mixin p_serif {
+  @include text_normal;
+  font-family: $filo-ot;
+}
+
+/* Line Through Text */
+.text_line {
+  @include title_thin;
+  @include text_line_through($w: 100%);
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+/* Title */
+.title_thin,
+.title_thin p {
+  @include title_thin;
+  line-height: 0.85;
+  padding-top: 24px;
+}
+.title_thick,
+.title_thick p {
+  @include text_normal;
+  font-family: $frank-dmcm;
+  line-height: 1;
+}
+.title_serif,
+.title_serif p {
+  font-family: $filo-sm;
+  line-height: 0.85;
+  letter-spacing: normal;
+}
+
+/* Subtitle */
+.subtitle_serif {
+  @include text_normal;
+  font-family: $filo-all;
+  line-height: 1.3;
+  
+  p {
+    @include font_size_p_lg;
+    padding: 0;
+    font-family: $filo-all;
+    line-height: 1;
+  }
+}
+
+.p_serif {
+  @include p_serif;
+  line-height: 1.5;
+}
+
+.p_pad_0 {
+
+  p {
+    padding: 0;
+  }
+}
+
+.text_body,
+.text_body p {
+  @include text_normal;
+  @include font_size_p_md;
+  font-family: $filo-ot;
+  line-height: 1.5;
+}
+.text_subtitle, 
+.text_subtitle p {
+  @include text_normal;
+  @include font_size_h6;
+  font-family: $filo-all;
+  line-height: 0.8;
+  padding: 0;
+}
+.text_title,
+.text_title p {
+  @include text_normal;
+  @include font_size_h3;
+  font-family: $frank-dmcm;
+  line-height: 1;
+}
+
+
+
+
+
+/* Position */
+
+.align_xy {
+  @include align_xy;
+}
+.align_x {
+  @include align_x;
+}
+.align_y {
+  @include align_y;
+}
+
+.align_center_bottom {
+  @include align_x;
+  bottom: 0;
+}
+@include tablet_pt {
+
+  .align_xy_tablet_up {
+    @include align_xy;
+  }
+  .align_x_tablet_up {
+    @include align_x;
+  }
+  .align_y_tablet_up {
+    @include align_y;
+  }
+}
+@include tablet_ls {
+
+  .align_xy_laptop_up {
+    @include align_xy;
+  }
+  .align_x_laptop_up {
+    @include align_x;
+  }
+  .align_y_laptop_up {
+    @include align_y;
+  }
+}
+
+
+
+/* Icons */
+
+.icon_size {
+  width: 84px;
+  height: 84px;
+}
+
+
+
+/* Text */
+
+.color_copy {
+  color: #223655;
+}
+.color_white {
+  color: white;
+}
+.text_line_through {
+  @include text_line_through;
+}
+
+
+
+.full_screen_height {
+  width: 100%;
+
+  @media (min-width: 768px) {
+    height: 100vh;
+  }
+}
+.max_width_1280 {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+
+// .font_pad_0 {
+
+//   .h1, h2, h3, h4, h5, h6, p, li {
+//     padding: 0;
+//   }
+// }
+
+// .font_family_franklin {
+
+//   h1, h2, h3, h4, h5, h6 {
+//     padding: 0;
+//     padding-top: 16px;
+//   }
+// }
+
+/* Font Size */
+.font_size_h1,
+.font_size_h1 p {
+  @include font_size_h1;
+}
+.font_size_h2,
+.font_size_h2 p {
+  @include font_size_h2;
+}
+.font_size_h3,
+.font_size_h3 p {
+  @include font_size_h3;
+}
+.font_size_h4,
+.font_size_h4 p {
+  @include font_size_h4;
+}
+.font_size_h5,
+.font_size_h5 p {
+  @include font_size_h5;
+}
+.font_size_h6,
+.font_size_h6 p {
+  @include font_size_h6;
+}
+.font_size_p_lg,
+.font_size_p_lg p {
+  @include font_size_p_lg;
+}
+.font_size_p_md,
+.font_size_p_md p {
+  @include font_size_p_md;
+}
+.font_size_p_sm,
+.font_size_p_sm p {
+  @include font_size_p_sm;
+}
+
+
+
+
+
+/* Max Width */
+
+.max_width_768 {
+  max-width: 768px;
+  margin: 0 auto;
+}
+.max_width_1024 {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.max_width_1280 {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.max_width_1680 {
+  max-width: 1680px;
+  margin: 0 auto;
+}
+
+
+
+/* Hero */
+@media (max-width: 1023px) {
+          
+  .hero {
+    height: auto !important;
+  }
+  .hero .ow-bg-group {
+    position: relative;
+    height: 100vw;
+    max-height: 768px;
+  }
+  .hero .ow-sctn-ctnt .ow-bg-group {
+    position: absolute;
+    height: 100%;
+  }
+  .hero .ow-ctnt.pos {
+    transform: none;
+    top: auto;
+    left: auto;
+    position: relative;
+  }
+}
+
+
+
+
+
+
+/* Custom Reusable styles for 601w */
+/* ------------------------------- */
+
+
+.header_links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  li {
+    padding: 16px 0;
+  }
+  @include tablet_ls {
+    @include align_y;
+    text-align: right !important;
+    right: 0;
+  }
+}
+
+.footer_links {
+  padding: 32px 0;
+  list-style: none;
+  margin: 0;
+
+  li {
+    padding: 12px 0;
+  }
+  a {
+    @include font_size_p_sm;
+  }
+  @include tablet_ls {
+    padding: 12px 0;
+  }
+}
+
+
+
+
+
+.filo_all,
+.filo_all p {
+  font-family: $filo-all;
+}
+.filo_ot,
+.filo_ot p {
+  font-family: $filo-ot;
+}
+.filo_sm,
+.filo_sm p {
+  font-family: $filo-sm;
+}
+.frank_bkcm,
+.frank_bkcm p {
+  font-family: $frank-bkcm;
+}
+.frank_dmcm,
+.frank_dmcm p {
+  font-family: $frank-dmcm;
+}
+.frank_dmxcm,
+.frank_dmxcm p {
+  font-family: $frank-dmxcm;
+}
+
+
+.font_post_list_title_line_through,
+.font_post_list_title_line_through p {
+  @include text_line_through;
+  font-family: $frank-dmxcm;
+  color: $w-highlights;
+  width: 100%;
+}
+.font_post_list_title,
+.font_post_list_title p {
+  font-family: $frank-dmcm;
+  text-align: center;
+  color: $w-portfolio;
+  width: 100%;
+}
+.font_post_list_item_post_title,
+.font_post_list_item_post_title p {
+  @include font_size_p_lg;
+  font-family: $filo-ot;
+  color: $w-highlights;
+}
+.font_post_list_item_member_title,
+.font_post_list_item_member_title p {
+  font-family: $frank-dmcm;
+  text-transform: uppercase;
+  color: $w-portfolio;
+}
+
+
+.cta {
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+
+  a {
+    font-family: $frank-dmcm;
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  span {
+    @include smooth_font;
+    @include align_xy;
+    padding-top: 6px;
+    font-size: 20px;
+  }
+}
+
+
+
+/* Post List */
+@mixin font_sans_light {
+  font-size: 20px;
+  font-family: $frank-bkcm;
+}
+.font_sans_light,
+.font_sans_light p {
+  @include font_sans_light;
+}
+
+.post_type_case_icon {
+  max-width: 108px !important;
+  margin: 16px auto;
+  display: block;
+}
+.post_type_case_name {
+  color: white;
+  text-align: center;
+  font-size: 56px;
+  font-family: $frank-dmxcm;
+}
+
+.post_type_case_text {
+  @include sctn_spacing;
+}
+.post_type_case_title,
+.post_type_case_title p {
+  font-family: $frank-dmxcm;
+  text-transform: uppercase;
+}
+.post_type_case_subtitle,
+.post_type_case_subtitle p {
+  @include font_size_p_lg;
+  color: $w-portfolio;
+  font-family: $frank-bkcm;
+  text-transform: uppercase;
+}
+
+
+
+/* Case Study: Detail Page */
+.case_header_icon {
+  max-width: 84px;
+  margin: 0 auto;
+}
+.case_header_name,
+.case_header_name p {
+  font-family: $frank-dmxcm;
+  font-size: 32px;
+}
+.case_header_case_text,
+.case_header_case_text p { /* the words: CASE STUDY */
+  font-size: 18px;
+  @include text_line_through($w: 100%);
+  font-family: $frank-dmxcm;
+}
+.case_header_pretitle,
+.case_header_pretitle p {
+  @include text_line_through($w: 100%);
+  font-size: 16px;
+  padding: 0;
+  font-family: $frank-dmxcm;
+
+  span {
+    position: relative;
+    top: 2px;
+    letter-spacing: 1px;
+  }
+}
+.case_header_title,
+.case_header_title p {
+  font-size: 36px;
+  font-family: $filo-sm;
+  padding-top: 4px;
+  padding: 0;
+}
+.case_header_subtitle,
+.case_header_subtitle p {
+  font-size: 20px;
+  font-family: $filo-all;
+  text-transform: uppercase;
+  padding: 0;
+  max-width: 260px;
+  margin: 0 auto;
+}
+.case_body_pretitle,
+.case_body_pretitle p {
+  @include font_sans_light;
+}
+.case_body_title,
+.case_body_title p {
+  @include font_size_h4;
+  font-family: $frank-dmxcm;
+}
+.case_body_address, 
+.case_body_address p {
+  font-size: 22px;
+  font-family: $filo-all;
+  color: $w-portfolio;
+}
+
+
+@mixin case_stat {
+  @include align_y;
+  padding-top: 16px;
+}
+.case_stat_title {
+  @include case_stat;
+  @include font_sans_light;
+  font-size: 22px;
+}
+.case_stat_body {
+  @include case_stat;
+  font-size: 22px;
+  font-family: $frank-dmcm;
+}
+
+.building_header_title,
+.building_header_title p {
+  @include font_size_h3;
+  font-family: $filo-sm;
+  color: white;
+  padding: 0;
+}
+.building_header_subtitle,
+.building_header_subtitle p {
+  @include font_size_p_lg;
+  font-family: $filo-ot;
+  color: #7d94af;
+  padding: 0;
+  padding-top: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.home_case_title { 
+  font-size: 48px;
+  @include text_normal;
+  font-family: $frank-dmxcm;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  top: 10px;
+
+  @media (min-width: 1024px) {
+    font-size: 68px;
+  }
+  @media (min-width: 1440px) {
+    font-size: 74px;
+  }
+  @media (min-width: 1680px) {
+    font-size: 80px;
+  }
+  @media (min-width: 1920px) {
+    font-size: 88px;
+  }
+}
+.home_highlights_title {
+  @include font_size_h3;
+  @include text_normal;
+  font-family: $filo_all;
+}
+.home_double_title,
+.home_double_title p {
+  @include text_normal;
+  font-family: $frank-dmxcm;
+  font-size: 144px;
+  position: relative;
+  top: 48px;
+  padding: 0;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    top: 0;
+    font-size: 160px;
+  }
+}
+.home_double_subtitle,
+.home_double_subtitle p {
+  @include text_normal;
+  font-family: $frank-dmxcm;
+  font-size: 72px;
+  position: relative;
+  padding: 0;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    top: -60px;
+    font-size: 78px;
+  }
+}
+.home_double_body,
+.home_double_body p {
+  @include text_normal;
+  font-family: $filo-ot;
+  font-size: 36px;
+  line-height: 1.03;
+  display: block;
+  text-align: left;
+  padding: 0;
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  line-height: 1.25;
+
+  @media (min-width: 768px) {
+    max-width: 100%;
+    font-size: 40px;
+  }
+}
+
+
+
+
+
+/* Performance Table */
+
+.table_flex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.table_cell {
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 16px 8px;
+  flex: 0 0 14.28%;
+}
+
+
+
+.phablet_up {
+  display: none;
+}
+@media (min-width: 414px) {
+
+  .phablet_up {
+    display: block;
+  }
+}
+
+
+.tablet_pt_up {
+  display: none;
+}
+@media (min-width: 768px) {
+
+  .tablet_pt_up {
+    display: block;
+  }
+}
+
+
+.tablet_ls_up {
+  display: none;
+}
+@media (min-width: 1024px) {
+
+  .tablet_ls_up {
+    display: block;
+  }
+}
+
+
+.tablet_laptop {
+  display: none;
+}
+@media (min-width: 1280px) {
+
+  .laptop_up {
+    display: block;
+  }
+}
+
+
+
+

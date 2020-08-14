@@ -1,0 +1,1 @@
+export const TextTitle = ({ attr, style = {}, className = '' }) => (attr.text_title) && <h2 className={ `ow-text ow-title ${className}` } style={ style } dangerouslySetInnerHTML={{ __html: attr.text_title }} />;

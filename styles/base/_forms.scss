@@ -1,0 +1,210 @@
+
+
+/* -------------------------------------------------------------------------- */
+/* FORMS */
+
+
+button, input, select, optgroup, textarea {
+  font-size: 16px;
+  font-family: $font-forms;
+  color: $color-copy;
+}
+form,
+.ow-form,
+.woocommerce-form {
+  margin: 0 auto;
+  border-radius: 0;
+  
+  i, label {
+      color: $color-primary;
+  }
+  i {
+      font-size: 20px;
+  }
+  label {
+      font-family: $font-forms;
+      padding: 0;
+      font-size: 16px;
+      display: block;
+      padding-bottom: 4px;
+      text-transform: capitalize;
+  }
+
+  /* Form */
+  input,
+  button,
+  input[type=text], 
+  input[type=url], 
+  input[type=tel], 
+  input[type=number], 
+  input[type=color], 
+  input[type=email], 
+  input[type=search], 
+  input[type=date],
+  input[type=password] {
+      @include form_field;
+      font-size: 18px;
+
+      @include tablet_pt {
+          font-size: 18px;
+      }
+      .ajax-loader {
+          position: absolute;
+      }
+      &::-webkit-input-placeholder,
+      &::-moz-placeholder,
+      &:-ms-input-placeholder,
+      &:-moz-placeholder { /* Chrome/Opera/Safari */
+        color: $color-primary !important;
+      }
+  } 
+  input[type=search] {
+      -webkit-appearance: textfield;
+  }
+  input[type=checkbox] {
+      float: left;
+      width: auto;
+      margin: 0;
+      padding: 0;
+      height: auto;
+  }
+  .button,
+  button[type=submit],
+  input[type=submit] {
+      @include cta_primary;
+      display: block;
+      width: auto;
+      margin: 0;
+  }
+  textarea {
+      @include form_field;
+      padding: 8px 16px;
+      height: auto;
+  }
+
+  
+  /* Select */
+  .ow-wrap-select {
+      position: relative;
+
+      i {
+          @include align_y;
+          right: 16px;
+          pointer-events: none;
+      }
+  }
+  select {
+      @include form_field;
+      @include appearance_type;
+      color: #a5a5a5;
+  }
+  .select2-container .select2-selection--single {
+      @include form_field;
+      height: 50px;
+      border-radius: 0 !important;
+      margin-bottom: 0;
+
+      .select2-selection__rendered {
+          height: 100%;
+          padding-top: 6px;
+          padding-left: 0;
+      }
+      .select2-selection__arrow {
+          @include align_y;
+          right: 8px;
+      }
+  }
+
+
+  
+  /* Required Field Asterisk */
+  .required {
+      color: $color-primary;
+      margin-right: 4px;
+  }
+  .ow-field, .ow-submit {
+      padding: 8px;
+  }
+  &.ow-form-lost-password,
+  &.ow-form-newsletter {
+      background: none;
+      max-width: 640px;
+  }
+  &.ow-form-newsletter {
+      
+      label {
+          color: white;
+      }
+      input,
+      button,
+      input[type=text], 
+      input[type=url], 
+      input[type=tel], 
+      input[type=number], 
+      input[type=color], 
+      input[type=email], 
+      input[type=search], 
+      input[type=date] {
+          @include form_field;
+          background: rgba(255, 255, 255, 0.4);
+          color: white !important;
+          padding: 4px 16px;
+          border-color: white;
+
+          &::-webkit-input-placeholder,
+          &::-moz-placeholder,
+          &:-ms-input-placeholder,
+          &:-moz-placeholder { /* Chrome/Opera/Safari */
+            color: white !important;
+          }
+      }
+      input[type=submit] {
+          @include cta_white;
+      }
+  }
+  &.ow-form-lost-password {
+      @include inline_form;
+  }
+  &.ow-form-contact {
+
+      input[type=submit] {
+          @include cta_primary;
+          float: right;
+          margin: 0;
+      }
+  }
+}
+
+
+/* Search Form */
+
+.site-content {
+
+  .search-form {
+      @include clearfix;
+      padding-top: 32px;
+      margin: 0 auto;
+      max-width: 640px;
+      
+      label,
+      input[type=submit] {
+          width: 100%;
+          display: block;
+      }
+      input[type=submit] {
+          @include cta_primary_brdr;    
+      }
+      @include phablet {
+          
+          label {
+              width: calc(100% - 160px);
+              float: left;
+              padding-right: 12px;
+          }
+          input[type=submit] {
+              width: 160px;
+              float: right;
+          }
+      }
+  }
+}

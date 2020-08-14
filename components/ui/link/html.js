@@ -1,0 +1,1 @@
+export const LinkHtml = ({ attr }) => ((attr.link_text || attr.link_url) && (<a href={ attr.link_url } target="_blank">{ attr.link_text }</a>));

@@ -1,0 +1,1 @@
+export const TextPretitle = ({ attr, style = {}, className = '' }) => (attr.text_pretitle) && <h3 className={ `ow-text ow-pretitle ${className}` } style={ style } dangerouslySetInnerHTML={{ __html: attr.text_pretitle }} />;

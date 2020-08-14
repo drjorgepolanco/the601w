@@ -1,0 +1,1 @@
+export const fmtClassName = (attrs) => (attrs && attrs.className) ? attrs.className : '';

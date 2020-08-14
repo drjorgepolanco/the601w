@@ -1,0 +1,1 @@
+export const mediaType = (attr) => (attr) && ((attr.media_type) ? attr.media_type : '');

@@ -1,0 +1,1 @@
+export const fmtColorAccent = (attr) => (attr && attr.fmt_color_accent) ? { color: attr.fmt_color_accent } : {};
