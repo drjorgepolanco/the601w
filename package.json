@@ -5,9 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "now-build": "next build && next export -o dist",
-    "heroku-postbuild": "npm run build"
+    "start": "next start"
   },
   "dependencies": {
     "axios": "^0.19.2",

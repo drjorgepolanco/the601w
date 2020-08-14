@@ -8,10 +8,10 @@ export const BlockBody = ({ block }) => {
   return (
     <FmtBlock attr={ body } attrName={ 'body' }>
       <div className="body" style={{ textAlign: 'center' }}>
-      <div className="ow-text ow-group">
-        <TextTitle attr={ body } style={{ textTransform: 'none' }}  />
-        { (body.text_body)  && <div className={ classes.text_body } dangerouslySetInnerHTML={{ __html: body.text_body }} /> }
-      </div>
+        <div className="ow-text ow-group">
+          <TextTitle attr={ body } style={{ textTransform: 'none' }}  />
+          { (body.text_body)  && <div className={ classes.text_body } dangerouslySetInnerHTML={{ __html: body.text_body }} /> }
+        </div>
 
         <div className={ classes.cta } style={{ background: fmt_color }}>
           <LinkGroup attr={ body } style={{ color: fmt_color_accent, lineHeight: '40px', fontSize: '16px' }} />
