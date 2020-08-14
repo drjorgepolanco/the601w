@@ -27,6 +27,9 @@ export const BlockHeader = (props) => {
         .wrap-text {
           width: 100%;
         }
+        .landscape .wrap-img {
+          height: 75vw;
+        }
         @media (min-width: 768px) {
           .wrap-img {
             width: 50%;

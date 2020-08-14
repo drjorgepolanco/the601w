@@ -31,7 +31,7 @@ const LinkItem = ({ item, onClick }) => {
         @media (min-width: 1024px) {
           li {
             display: inline-block;
-            margin: 0 16px;
+            margin: 0 24px;
           }
         }
       `}</style>

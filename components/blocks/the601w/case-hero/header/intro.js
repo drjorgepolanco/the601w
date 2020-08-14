@@ -15,7 +15,7 @@ export const HeaderIntro = (props) => {
           <h1 className={ classes.case_header_name }>{ text_name.toUpperCase() }</h1>
         </div>
         
-        <div className="intro-bottom" style={{ width: '100%', maxWidth: '360px' }}>
+        <div className="intro-bottom" style={{ width: '100%', maxWidth: '360px', margin: '0 auto' }}>
           <h6 className={ classes.case_header_pretitle }><span>CASE STUDY</span></h6>
           <h3 className={ classes.case_header_title } dangerouslySetInnerHTML={{ __html: header.text_title }} />
           <div dangerouslySetInnerHTML={{ __html: header.text_body }} className={ classes.case_header_subtitle } />
@@ -26,8 +26,22 @@ export const HeaderIntro = (props) => {
           font-size: 54px;
           letter-spacing: 2px;
         }
+        h3 {
+          width: 100%;
+          max-width: 280px;
+          margin: 16px auto 0;
+        }
+        .intro-center {
+          margin-bottom: 64px;
+        }
+        .intro-bottom {
+          width: 100%;
+          max-width: 320px;
+          margin: 0 auto;
+        }
         @media (min-width: 768px) {
           .intro-center {
+            margin: 0;
             position: absolute;
             top: 50%;
             left: 50%;

@@ -55,6 +55,15 @@ export const HomeHero = (props) => {
             position: relative;
           }
         }
+        @media (min-width: 1024px) {
+          .wrap-img {
+            width: 35%;
+          }
+          .wrap-text {
+            width: 65%;
+            position: relative;
+          }
+        }
       `}</style>
     </section>
   );
