@@ -57,6 +57,8 @@ export const Blocks = (props) => {
         return <Block601w.PerformanceHero { ...props } key={ key } block={ block } />
       case 'ow-blocks/the601w-performance-highlights':
         return <Block601w.PerformanceHighlights { ...props } key={ key } block={ block } />
+      case 'ow-blocks/the601w-performance-list':
+        return <Block601w.PerformanceList { ...props } key={ key } block={ block } />
       case 'ow-blocks/the601w-performance-stats':
         return <Block601w.PerformanceStats { ...props } key={ key } block={ block } />
       case 'ow-blocks/the601w-performance-table':
