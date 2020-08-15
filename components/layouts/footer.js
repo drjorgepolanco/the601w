@@ -14,7 +14,7 @@ export const Footer = (props) => (
       </div>
       <div className="footer-sctn footer-bottom clearfix">
         <div className="wrap-el wrap-copyright">
-          <p className={ `copyright ${classes.filo_ot}` }>The 601w Companies &copy;2020. All rights reserved.</p>
+          <p className={ `copyright ${classes.filo_ot} ${classes.font_size_p_sm}` }>The 601w Companies &copy;2020. All rights reserved.</p>
         </div>
         <div className="wrap-nav nav-legal">
           <Links { ...props } element="legal" className={ classes.footer_links } />
