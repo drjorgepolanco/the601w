@@ -8,7 +8,7 @@ const Building = (props) => {
   const { posts, single } = props;
   const { blocks } = single;
   return (
-    <Layout single={ single }>
+    <Layout { ...props }>
       <div className="ow-post-type ow-building">
         <Blocks { ...props } blocks={ blocks } />
       </div>
@@ -36,11 +36,11 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 export async function getStaticProps({ params }) {
+  const site      = await api.get();
+  const acf       = await api.get('/acf/v3/options/options/');
   const buildings = await api.get(`/wp/v2/buildings?per_page=100`);
-  const res   = await api.get(`/wp/v2/buildings?slug=${params.slug}`);
-  const single = res.data[0];
-  
-  return { props: { single, posts: buildings.data.reverse() } }
+  const res       = await api.get(`/wp/v2/buildings?slug=${params.slug}`);
+  return { props: { posts: buildings.data.reverse(), single: res.data[0], site: site.data, acf: acf.data.acf } };
 }
 export default Building;
 

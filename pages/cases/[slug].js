@@ -9,7 +9,7 @@ const Case = (props) => {
   const { blocks } = single;
   const index = indexById(posts, single);
   return (
-    <Layout single={ single }>
+    <Layout { ...props }>
       <div className="ow-post-type ow-case">
         <Blocks { ...props } blocks={ blocks } />
         <wMrkp.PostsNav 
@@ -38,9 +38,10 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 export async function getStaticProps({ params }) {
+  const site  = await api.get();
+  const acf   = await api.get('/acf/v3/options/options/');
   const cases = await api.get(`/wp/v2/cases?per_page=100`);
   const res   = await api.get(`/wp/v2/cases?slug=${params.slug}`);
-  const single = res.data[0];
-  return { props: { single, posts: cases.data.reverse() } }
+  return { props: { posts: cases.data.reverse(), single: res.data[0], site: site.data, acf: acf.data.acf } }
 }
 export default Case;

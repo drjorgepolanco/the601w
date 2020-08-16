@@ -5,9 +5,8 @@ import { Blocks } from '../components/blocks';
 const Page = (props) => {
   const { single } = props;
   const { blocks } = single;
-  
   return (
-    <Layout single={ single }>
+    <Layout { ...props }>
       <div className="ow-post-type ow-page">
         <Blocks blocks={ blocks } />
       </div>
@@ -21,8 +20,9 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 export async function getStaticProps({ params }) {
-  const res = await api.get(`/wp/v2/pages?slug=${params.slug}`);
-  const single = res.data[0];
-  return { props: { single } }
+  const site = await api.get();
+  const acf  = await api.get('/acf/v3/options/options/');
+  const res  = await api.get(`/wp/v2/pages?slug=${params.slug}`);
+  return { props: { single: res.data[0], site: site.data, acf: acf.data.acf } }
 }
 export default Page;
